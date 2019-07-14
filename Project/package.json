@@ -1,0 +1,14 @@
+{
+  "name": "devmanager",
+  "version": "1.0.0",
+  "description": "A nice little Project Manager to speed up your workflow.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jost Klink",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "dependencies": {
+    "electron": "^5.0.6"
+  }
+}
