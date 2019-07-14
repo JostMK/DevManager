@@ -1,0 +1,47 @@
+const { app, BrowserWindow, ipcMain } = require('electron')
+
+
+let win
+
+function createWindow() {
+
+    // create Main Window
+    win = new BrowserWindow({
+        width: 1100,
+        height: 750,
+        minWidth: 650,
+        minHeight: 400,
+        frame: false,
+        backgroundColor: '#333333',
+        webPreferences: {
+            nodeIntegration: true
+        }
+    })
+
+    // load index.html
+    win.loadFile('BaseModule/main.html')
+
+
+    //garbage collection
+    win.on('closed', () => {
+        win = null;
+    })
+} 
+
+
+// create Main Window when app ready
+app.on('ready', createWindow)
+
+
+
+//special case with MacOS
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
+})
+app.on('activate', () => {
+    if (win === null) {
+        createWindow()
+    }
+})
