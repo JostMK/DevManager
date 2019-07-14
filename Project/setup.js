@@ -1,4 +1,3 @@
-const electron = require('electron');
 const { app, BrowserWindow } = require('electron')
 
 var path = require('path')
@@ -8,7 +7,7 @@ let win
 
 function createWindow() {
 
-    // create Main Window
+    // create BrowserWindow
     win = new BrowserWindow({
         width: 1100,
         height: 750,
@@ -22,7 +21,7 @@ function createWindow() {
         icon: path.join(__dirname, 'assets/icons/testIcon.png')
     })
 
-    // load index.html
+    // load Main Window into BrowserWindow
     win.loadFile('BaseModule/main.html')
 
 
