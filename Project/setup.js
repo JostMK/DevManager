@@ -1,4 +1,7 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const electron = require('electron');
+const { app, BrowserWindow } = require('electron')
+
+var path = require('path')
 
 
 let win
@@ -15,7 +18,8 @@ function createWindow() {
         backgroundColor: '#333333',
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        icon: path.join(__dirname, 'assets/icons/testIcon.png')
     })
 
     // load index.html

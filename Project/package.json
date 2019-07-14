@@ -4,11 +4,18 @@
   "description": "A nice little Project Manager to speed up your workflow.",
   "main": "setup.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/testIcon.icns --prune=true --out=../Builds/Mac",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/testIcon.ico --prune=true --out=../Builds/Win --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"DevManager\"",    
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/testIcon.png --prune=true --out=../Builds/Linux"
   },
   "author": "Jost Klink",
   "license": "SEE LICENSE IN ../LICENSE",
   "dependencies": {
     "electron": "^5.0.6"
+  },
+  "devDependencies": {
+    "electron-packager": "^14.0.1"
   }
 }
