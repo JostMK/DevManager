@@ -1,7 +1,7 @@
 body, html{
     width: 100%;
     height: 100%;
-    background: #333333;
+    background: var(--main-bg-color);
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -10,5 +10,55 @@ body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'proxima-nova', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+:root {
+    --main-bg-color: #222222;
+    --main-bg-highlight-color: #333333;
+    --main-text-color: #ffffff;
+    
+    --windowbar-text-color: #bbbbbb;
+    --windowbar-text-selected-color: #444444;
+}
+
+#WindowBar{
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background: var(--main-bg-highlight-color);
+    box-shadow: 0px 4px 8px black;
+    display: block;
+    line-height: 30px;
+    font-size: 10px;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+#AppName{
+    color: var(--windowbar-text-color);
+    float: left;
+    padding-left: 15px;
+}
+#WindowButtons{
+    color: var(--windowbar-text-color);
+    float: right;
+    -webkit-app-region: no-drag;
+}
+#minimize,#maximize,#close{
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    float: left;
+    padding: 0px;
+    background-color: var(--main-bg-highlight-color);
+}
+#minimize:hover,#maximize:hover{
+    background-color: var(--windowbar-text-selected-color);
+}
+#close:hover{
+    background-color: #ff0000;
 }

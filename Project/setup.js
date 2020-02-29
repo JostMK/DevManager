@@ -23,6 +23,7 @@ function createWindow() {
 
     // load Main Window into BrowserWindow
     win.loadFile('BaseModule/main.html')
+    win.webContents.openDevTools()
 
 
     //garbage collection
@@ -34,6 +35,8 @@ function createWindow() {
 
 // create Main Window when app ready
 app.on('ready', createWindow)
+
+console.log("T");
 
 
 
